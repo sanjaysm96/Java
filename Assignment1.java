@@ -34,16 +34,6 @@ public class Assignment1 {
         System.out.println("Hidden Text Box Displayed: " + hiddenTextBox.isDisplayed());
         System.out.println("Hidden Text Box Enabled: " + hiddenTextBox.isEnabled());
 
-        // Use JavaScript to enable the Last Name field if disabled
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        if (!lastName.isEnabled()) {
-            js.executeScript("arguments[0].removeAttribute('disabled');", lastName);
-        }
-        lastName.sendKeys("Test Last Name");
-
-        // Use JavaScript to enter text into the hidden field
-        js.executeScript("arguments[0].value='Hidden Text';", hiddenTextBox);
-
         // Close the browser
         driver.quit();
     }
